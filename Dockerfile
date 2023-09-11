@@ -1,37 +1,20 @@
-FROM php:8.1-apache
-
-WORKDIR /var/www/html
+FROM richarvey/nginx-php-fpm:latest
 
 COPY . .
 
-RUN apt-get update && apt-get install -y \
-    unzip \
-    libzip-dev \
-    && docker-php-ext-install zip \
-    && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
-    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
-    && php -r "unlink('composer-setup.php');" \
-    && composer install --no-scripts --no-autoloader --prefer-dist
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
+# Laravel config
+ENV APP_ENV production
+ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
 
-
-RUN a2enmod rewrite
-COPY ./docker/apache/000-default.conf /etc/apache2/sites-available/
-ENV APACHE_DOCUMENT_ROOT /var/www/html/public
-
-
-RUN php artisan key:generate
-
-
-RUN composer dump-autoload \
-    && php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
-
-EXPOSE 80
-
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
 CMD ["/start.sh"]
-
-
-
