@@ -26,6 +26,7 @@ Note: route can also take dynamic input like the name of the user.
 ## Standard Formart for each Api Request and Response.
 
 - For Post Request
+`
 {
     method: 'Post',
     url: https://test-backend-21mn.onrender.com/api/,
@@ -37,8 +38,10 @@ Note: route can also take dynamic input like the name of the user.
         name: 'Micheal'
     }
 }
+`
 
 - For Post Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -49,9 +52,10 @@ Note: route can also take dynamic input like the name of the user.
         }
     }
 }
-
+`
 
 - For Get Request
+`
 {
     method: 'Get',
     url: https://test-backend-21mn.onrender.com/api/3,
@@ -60,8 +64,10 @@ Note: route can also take dynamic input like the name of the user.
         'Content-Type': 'application/vnd.api+json',
     }
 }
+`
 
 - For Get Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -72,8 +78,10 @@ Note: route can also take dynamic input like the name of the user.
         }
     }
 }
+`
 
 - For Put Request
+`
 {
     method: 'Put',
     url: https://test-backend-21mn.onrender.com/api/3,
@@ -85,8 +93,10 @@ Note: route can also take dynamic input like the name of the user.
         name: 'Christian'
     }
 }
+`
 
 - For Post Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -97,8 +107,10 @@ Note: route can also take dynamic input like the name of the user.
         }
     }
 }
+`
 
 - For Delete Request
+`
 {
     method: 'Delete',
     url: https://test-backend-21mn.onrender.com/api/,
@@ -107,8 +119,10 @@ Note: route can also take dynamic input like the name of the user.
         'Content-Type': 'application/vnd.api+json',
     },
 }
+`
 
 - For Delete Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -116,6 +130,7 @@ Note: route can also take dynamic input like the name of the user.
         "user": "Deleted Successfully"
     }
 }
+`
 
 
 ## Running it on local server
@@ -152,6 +167,7 @@ https://http://127.0.0.1:8000/api/user_id
 ## Typical Request and Response
 
 - For Post Request
+`
 {
     method: 'Post',
     url: https://http://127.0.0.1:8000/api/,
@@ -163,8 +179,10 @@ https://http://127.0.0.1:8000/api/user_id
         name: 'Micheal'
     }
 }
+`
 
 - For Post Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -175,9 +193,11 @@ https://http://127.0.0.1:8000/api/user_id
         }
     }
 }
+`
 
 
 - For Get Request
+`
 {
     method: 'Get',
     url: https://http://127.0.0.1:8000/api/3,
@@ -186,8 +206,10 @@ https://http://127.0.0.1:8000/api/user_id
         'Content-Type': 'application/vnd.api+json',
     }
 }
+`
 
 - For Get Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -198,8 +220,10 @@ https://http://127.0.0.1:8000/api/user_id
         }
     }
 }
+`
 
 - For Put Request
+`
 {
     method: 'Put',
     url: https://http://127.0.0.1:8000/api/3,
@@ -211,8 +235,10 @@ https://http://127.0.0.1:8000/api/user_id
         name: 'Christian'
     }
 }
+`
 
 - For Post Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -223,8 +249,10 @@ https://http://127.0.0.1:8000/api/user_id
         }
     }
 }
+`
 
 - For Delete Request
+`
 {
     method: 'Delete',
     url: https://http://127.0.0.1:8000/api/,
@@ -233,8 +261,9 @@ https://http://127.0.0.1:8000/api/user_id
         'Content-Type': 'application/vnd.api+json',
     },
 }
-
+`
 - For Delete Response
+`
 {
     "status": "Request was succesful.",
     "message": null,
@@ -242,3 +271,4 @@ https://http://127.0.0.1:8000/api/user_id
         "user": "Deleted Successfully"
     }
 }
+`
